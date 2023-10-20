@@ -38,7 +38,7 @@ namespace Controls
             );
 
             Quaternion oldRotation = _camera.transform.localRotation;
-            Quaternion newRotation = oldRotation * Quaternion.Euler(direction.y * _sensitivity, 0.0f, 0.0f);
+            Quaternion newRotation = oldRotation * Quaternion.Euler(-direction.y * _sensitivity, 0.0f, 0.0f);
             Vector3 eulerAngles = newRotation.eulerAngles;
 
             float x = MathHelpers.ClampAngle(eulerAngles.x, -_maxVerticalAngle, _maxVerticalAngle);
